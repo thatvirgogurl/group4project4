@@ -50,7 +50,7 @@ const createUrl = async function (req, res) {
         }
         let { longurl, ...rest } = req.body
 
-        if(rest.lenght ==0){
+        if(rest.length ==0){
             return res.status(400).send({status:false, message:"please provide only longurl "})
         }
 
