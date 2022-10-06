@@ -48,12 +48,11 @@ const createUrl = async function (req, res) {
         if (!Object.keys(req.body).length > 0) {
             return res.status(400).send({ status: false, message: "Please provide some data in body" })
         }
+
         if (Object.keys(req.body).length > 1) {
             return res.status(400).send({ status: false, message: "Please provide only longUrl" })
         }
         let { longUrl} = req.body
-
-        
         if (!isValid(longUrl)) {
             return res.status(400).send({ status: false, message: "longUrl is required" })
         }
